@@ -24,6 +24,8 @@ static int do_login(const char *username) {
 }
 
 int main(int argc, char *argv[]) {
+    printf("logging in...\n");
+
     if (argc != 2)
         return 1;
 

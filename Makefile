@@ -1,5 +1,4 @@
 default:
-	tcc login.c -o login
-
+	tcc compiler.c -o compiler.out
 helloworld:
 	tcc helloworld.c -o helloworld
