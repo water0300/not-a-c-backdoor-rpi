@@ -1,7 +1,7 @@
 # not-a-c-backdoor-rpi
 
 ## le code
-- tinycc_dirty is the bad boy, contains the compiler hack. The exploit lives in the file `tinycc_dirty\libtcc.c`
+- tinycc_dirty is the bad boy, contains the compiler hack. The exploit lives in the file `tinycc_dirty\libtcc.c -> tcc_compile(...) found [here](https://github.com/water0300/not-a-c-backdoor-rpi/blob/main/tinycc_dirty/libtcc.c#L730)
 - tinycc_clean is the clean version of tinycc. Can replace with your own version of tinycc cloned [here](https://github.com/TinyCC/tinycc):
  
 
