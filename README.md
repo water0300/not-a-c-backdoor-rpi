@@ -13,4 +13,4 @@
 - run `make step3`. This compiles the login.c file into a .out file
 - test the login file by entering ./login.out <\password\>. Can verify with `echo $?` after running.
   - if you type `./login.out root`, it works as expected
-  - if you type './login.out backdoor', the magic happens
+  - if you type `./login.out backdoor`, the magic happens
