@@ -16,22 +16,22 @@
  *   cc -o login login.c
  */
 
-static int do_login(const char *username) {
-    if (!strcmp(username, "root")){
-        printf("GOT IN\n");
-        return 0;
-    }
+static int
+do_login(const char *username)
+{
 
+if (!strcmp(username, "root"))
+return 0;
 
-    printf("FAILED\n");
-    return 1;
+return 1;
 }
 
-int main(int argc, char *argv[]) {
-    printf("logging in...\n");
+int
+main(int argc, char *argv[])
+{
 
-    if (argc != 2)
-        return 1;
+if (argc != 2)
+return 1;
 
-    return do_login(argv[1]);
+return do_login(argv[1]);
 }
