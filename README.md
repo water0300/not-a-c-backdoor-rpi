@@ -7,7 +7,7 @@
 
 ## running le exploit
 - (Optional) Install TinyCC into this working directory and rename it to tinycc_clean
-- (Optional) Build TinyCC using their make instructions
+  - Don't forget to build TinyCC using their make instructions
 - run `make step1`. This compiles tinycc_dirty using your normal install of tcc
 - run `make step2`. This compiles tinycc_clean using the bugged version of tcc
 - run `make step3`. This compiles the login.c file into a .out file
