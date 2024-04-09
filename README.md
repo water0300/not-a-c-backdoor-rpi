@@ -8,9 +8,9 @@ a line you want to change, shove your exploit as a string into the file. It’s 
 handed a document to the post office, and a man in the middle intercepts your file, changes
 some of it without you knowing, and hands it down to the post office without suspicion.
 
-Clean version: <original source code>
+Clean version: `<original source code>`
 
-Dirty version: <some source code> <exploit code> <some source code>
+Dirty version: `<some source code> <exploit code> <some source code>`
 
 For the context of this assignment, we hack two things - the login.c file, as well as the compiler
 itself.
