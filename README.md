@@ -2,6 +2,8 @@
 
 This is an implementation of the compiler hack described by Ken Thompson's article [Reflections on Trusting Trust](https://www.cs.cmu.edu/~rdriley/487/papers/Thompson_1984_ReflectionsonTrustingTrust.pdf)
 
+If you happen to be an RPI student reading this, I'd appreciate if you gaze your eyes away from this repository until like the last day the assignment. But if you do feel like just copy/pasting this assignment as your own work, know that I've intentionally left a bug in this assignment, gl finding it lmao
+
 ## le write-up
 The main crux of the hack is just reading a c file, reading a file line by line, and once you reach
 a line you want to change, shove your exploit as a string into the file. It’s kind of like if you
