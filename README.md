@@ -1,7 +1,5 @@
 # not-a-c-backdoor-rpi
 
-## This is part of RPI Coursework for the infosec course. 
-
 This is an implementation of the compiler hack described by Ken Thompson's article [Reflections on Trusting Trust](https://www.cs.cmu.edu/~rdriley/487/papers/Thompson_1984_ReflectionsonTrustingTrust.pdf)
 
 ## le write-up
